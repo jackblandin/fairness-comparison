@@ -10,6 +10,7 @@ def local_results_path():
     home = pathlib.Path.home()
     path = home / '.fairness'
     ensure_dir(path)
+    print(f'local_results_path: {path}')
     return path
 
 def ensure_dir(path):
@@ -24,7 +25,7 @@ def get_metrics_list(dataset, sensitive_dict, tag):
 
 def get_detailed_metrics_header(dataset, sensitive_dict, tag):
     return ','.join(['algorithm', 'params', 'run-id'] + get_metrics_list(dataset, sensitive_dict, tag))
-    
+
 class ResultsFile(object):
 
     def __init__(self, filename, dataset, sensitive_dict, tag):
@@ -66,7 +67,7 @@ class ResultsFile(object):
             old_rows = []
 
         final_columns = set(old_columns).union(set(new_columns))
-        
+
         # FIXME: here we cross our fingers that parameters don't have "," in them.
         def indexed_rows(rows, column_names):
             result = {}

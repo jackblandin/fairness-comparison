@@ -6,6 +6,7 @@ ATTRS_TO_SAVE = [
   "params",
   "run-id",
 
+  "DemParWelf-tpr-tpr",
   "DIbinary",
   "DIavgall",
   "CV",

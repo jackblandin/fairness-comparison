@@ -66,3 +66,22 @@ R package requirements (use `install.packages`):
 * `magrittr`
 * `corrplot`
 * `robust`
+
+# For Counterfactual Utility Experiments
+
+```
+# Create the conda environment from the config file
+conda env create -f=conda.yaml
+
+# Activate the conda environment
+conda activate fairness-compairson
+
+# Create an IPython kernel which will allow you to run the Jupyter Notebook in the conda environment
+python3.6 -m ipykernel install --user --name fairness-compairson
+
+# Start the jupyter notebook server
+jupyter notebook
+
+```
+
+Then open localhost:8888 in web browser, then start the cfutil-experiments.ipynb notebook and select the "fairness-comparison" kernel.

@@ -23,11 +23,11 @@ DATASETS = [
 #     sensitive_attr="sex-race")
 
 # Real datasets:
-    Ricci(),
-    Adult(),
+    # Ricci(),
+    # Adult(),
     German(),
-    PropublicaRecidivism(),
-    PropublicaViolentRecidivism()
+    # PropublicaRecidivism(),
+    # PropublicaViolentRecidivism()
     ]
 
 
@@ -45,4 +45,4 @@ def get_dataset_by_name(name):
         if ds.get_dataset_name() == name:
             return ds
     raise Exception("No dataset with name %s could be found." % name)
-    
+
