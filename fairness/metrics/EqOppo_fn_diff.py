@@ -1,7 +1,7 @@
 """ Equal opportunity - Protected and unprotected False negative difference"""
 import math
 import sys
-import numpy
+import numpy as np
 
 from fairness.metrics.utils import calc_fp_fn
 from fairness.metrics.Metric import Metric
@@ -12,7 +12,7 @@ class EqOppo_fn_diff(Metric):
         self.name = 'EqOppo_fn_diff'
 
     def calc(self, actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-             unprotected_vals, positive_pred):
+             unprotected_vals, positive_pred, dict_of_nonclass_attrs):
         sensitive = dict_of_sensitive_lists[single_sensitive_name]
         fp_unprotected, fp_protected, fn_protected, fn_unprotected = \
             calc_fp_fn(actual, predicted, sensitive, unprotected_vals, positive_pred)

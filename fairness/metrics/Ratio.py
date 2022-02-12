@@ -8,11 +8,11 @@ class Ratio(Metric):
           self.name = self.numerator.get_name() + '_over_' + self.denominator.get_name()
 
      def calc(self, actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-              unprotected_vals, positive_pred):
+              unprotected_vals, positive_pred, dict_of_nonclass_attrs):
           num = self.numerator.calc(actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-                                    unprotected_vals, positive_pred)
+                                    unprotected_vals, positive_pred, dict_of_nonclass_attrs)
           den = self.denominator.calc(actual, predicted, dict_of_sensitive_lists,
-                                      single_sensitive_name, unprotected_vals, positive_pred)
+                                      single_sensitive_name, unprotected_vals, positive_pred, dict_of_nonclass_attrs)
 
           if num is None or den is None:
                return None

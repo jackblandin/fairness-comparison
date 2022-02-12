@@ -7,8 +7,8 @@ class FNR(Metric):
         self.name = 'FNR'
 
     def calc(self, actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-             unprotected_vals, positive_pred):
+             unprotected_vals, positive_pred, dict_of_nonclass_attrs):
         tpr = TPR()
         tpr_val = tpr.calc(actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-                           unprotected_vals, positive_pred)
+                           unprotected_vals, positive_pred, dict_of_nonclass_attrs)
         return 1 - tpr_val

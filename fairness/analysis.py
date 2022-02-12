@@ -32,9 +32,17 @@ def run(dataset = get_dataset_names(), graphs = GRAPHS):
                     "./fairness/results/generate-report.R"])
 
 def make_all_graphs(filename, graphs):
+    print(f'filename: {filename}')
+    # try:
+    #     filename = str(filename).replace('.fairness', 'fairness')
+    #     filename = filename.replace('jb846j/', 'jb846j/my/research/fairness-comparison/')
+    #     f = pd.read_csv(filename)
+    # except FileNotFoundError as e:
+    #    print("File not found:" + filename)
+    #    return
     try:
        f = pd.read_csv(filename)
-    except:
+    except FileNotFoundError as e:
        print("File not found:" + filename)
        return
     else:

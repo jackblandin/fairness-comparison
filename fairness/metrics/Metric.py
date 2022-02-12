@@ -14,15 +14,17 @@ class Metric:
         return self
 
     def calc(self, actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-             unprotected_vals, positive_pred):
+             unprotected_vals, positive_pred, dict_of_nonclass_attrs):
         """
         actual                          a list of the actual results on the test set
         predicted                       a list of the predicted results
-        dict_of_sensitive_lsits         dict mapping sensitive attr names to list of sensitive vals
+        dict_of_sensitive_lists         dict mapping sensitive attr names to list of sensitive vals
         single_sensitive_name           sensitive name (dict key) for the sensitive attr being
                                         focused on by this run of the algorithm
-        unprotected_vals                a list of the unprotected values for all sensitive attrs
+        unprotected_vals                a list of the of the unprotected values for all sensitive attrs.
         positive_pred                   the positive value of the prediction task.
+        nonsensitive_attrs              Nonsensitive x attributes (optional).
+        dict_of_nonclass_attrs          dict mapping sensitive attr names to list of all nonclass names
 
         returns                         the calculated result for this metric
 

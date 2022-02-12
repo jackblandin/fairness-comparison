@@ -78,3 +78,28 @@ def calc_fp_fn(actual, predicted, sensitive, unprotected_vals, positive_pred):
                     fn_protected+=1
     return fp_unprotected,fp_protected, fn_protected, fn_unprotected
 
+
+def calc_tp_tn(actual, predicted, sensitive, unprotected_vals, positive_pred):
+    """
+    Returns true positive and true negative for protected and unprotected group.
+    """
+    tp_protected = 0.0
+    tp_unprotected = 0.0
+    tn_protected=0.0
+    tn_unprotected=0.0
+    for i in range(0, len(predicted)):
+        protected_val = sensitive[i]
+        predicted_val = predicted[i]
+        actual_val= actual[i]
+        if protected_val in unprotected_vals:
+            if (str(predicted_val)==str(positive_pred))&(str(actual_val)==str(predicted_val)):
+                tp_unprotected+=1
+            elif(str(predicted_val)!=str(positive_pred))&(str(actual_val)==str(predicted_val)):
+                tn_unprotected+=1
+        else:
+            if (str(predicted_val)==str(positive_pred))&(str(actual_val)==str(predicted_val)):
+                    tp_protected+=1
+            elif(str(predicted_val)!=str(positive_pred))&(str(actual_val)==str(predicted_val)):
+                    tn_protected+=1
+    return tp_unprotected,tp_protected, tn_protected, tn_unprotected
+

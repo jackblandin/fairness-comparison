@@ -8,11 +8,11 @@ class Diff(Metric):
           self.name = "diff:" + self.metric1.get_name() + 'to' + self.metric2.get_name()
 
      def calc(self, actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-              unprotected_vals, positive_pred):
+              unprotected_vals, positive_pred, dict_of_nonclass_attrs):
           m1 = self.metric1.calc(actual, predicted, dict_of_sensitive_lists, single_sensitive_name,
-                                 unprotected_vals, positive_pred)
+                                 unprotected_vals, positive_pred, dict_of_nonclass_attrs)
           m2 = self.metric2.calc(actual, predicted, dict_of_sensitive_lists,
-                                 single_sensitive_name, unprotected_vals, positive_pred)
+                                 single_sensitive_name, unprotected_vals, positive_pred, dict_of_nonclass_attrs)
 
           if m1 is None or m2 is None:
                return None

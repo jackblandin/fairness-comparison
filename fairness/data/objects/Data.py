@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import pathlib
 from fairness.results import local_results_path
@@ -52,6 +53,14 @@ class Data():
         if len(self.get_sensitive_attributes()) > 1:
             return self.get_sensitive_attributes() + ['-'.join(self.get_sensitive_attributes())]
         return self.get_sensitive_attributes()
+
+    def get_nonclass_attribute_values(self, sensitive_attr, data_frame):
+        """
+        Returns a list of the values of all attributes that are not the class attribute. This
+        includes any protected attributes.
+        """
+        nonclass_attr_values = data_frame.loc[:, data_frame.columns != self.get_class_attribute()].values
+        return nonclass_attr_values
 
     def get_privileged_class_names(self, tag):
         """
