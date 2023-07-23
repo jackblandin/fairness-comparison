@@ -21,6 +21,6 @@ Start the jupyter notebook server
 jupyter notebook
 
 ```
-Then open localhost:8888 in web browser and start the `cfutil-experiments.ipynb` notebook and with the `fairness-comparison` kernel.
+Then open localhost:8888 in web browser and start the [cfutil-experiments.ipynb](./notebooks/cfutil-experiments.ipynb) notebook with the `fairness-comparison` kernel.
 Execute each of the cells in the notebook to rerun our experiments.
 You can also modify the parameters within the notebook in order to conduct your own analysis.
