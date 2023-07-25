@@ -1,5 +1,5 @@
 This repository is a fork of https://github.com/algofairness/fairness-comparison, which includes development setup info and the corresponding paper.
-The remainder of this README references the contributions made by our [Fairness Through Counterfactual Utilities](https://arxiv.org/abs/2108.05315) paper.
+The remainder of this README references the contributions made by our [Group Fairness in Machine Learning via Utilities](https://arxiv.org/abs/2108.05315) paper.
 
 # Development Setup
 
