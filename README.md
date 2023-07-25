@@ -16,6 +16,8 @@ python3.6 -m ipykernel install --user --name fairness-compairson
 
 # Reproducing Experiment Results
 
+### 5.1 – "Prediction-Outcome Disconnect with German Credit Dataset".
+
 Start the jupyter notebook server
 ```
 jupyter notebook
@@ -24,3 +26,7 @@ jupyter notebook
 Then open localhost:8888 in web browser and start the [cfutil-experiments.ipynb](./notebooks/cfutil-experiments.ipynb) notebook with the `fairness-comparison` kernel.
 Execute each of the cells in the notebook to rerun our experiments.
 You can also modify the parameters within the notebook in order to conduct your own analysis.
+
+### 5.4 Fairness in Clustering with Chicago Ward Redistricting
+
+All computations are performed via [redistricting-computations.xlsx](./redistricting-computations.xlsx).
